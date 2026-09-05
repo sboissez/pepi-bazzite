@@ -42,6 +42,7 @@ rm -f /usr/libexec/waydroid-container-stop
 rm -f /usr/libexec/waydroid-fix-controllers
 rm -rf /usr/share/applications/Waydroid/
 rm -f /usr/share/applications/discourse.desktop
+rm -rf /usr/share/fish
 
 # Install our custom Flatpaks (Discord, Zed, Transmission) on first boot.
 # /var isn't part of the committed image, so `flatpak install` can't run
