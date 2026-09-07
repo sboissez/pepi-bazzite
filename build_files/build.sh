@@ -13,6 +13,14 @@ cp -avf "/ctx/system_files"/. /
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 dnf5 install -y gnome-shell-extension-dash-to-dock
+
+# Ghostty terminal. No Flatpak or Homebrew formula exists, so it comes from the
+# scottames COPR; the repo is disabled again so it does not stay enabled on the
+# running system. Its config is managed by mise (github.com/sboissez/mise).
+dnf5 -y copr enable scottames/ghostty
+dnf5 install -y ghostty
+dnf5 -y copr disable scottames/ghostty
+
 dnf5 remove -y waydroid
 dnf5 remove -y gnome-shell-extension-gsconnect
 dnf5 remove -y input-remapper
