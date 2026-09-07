@@ -49,4 +49,5 @@ rm -rf /usr/share/fish
 # here during build - it has to happen post-boot once /var/lib/flatpak
 # exists. See system_files/usr/share/pepi-flatpaks/flatpaks for the list.
 systemctl enable pepi-install.service
-hostnamectl set-hostname pepi
+# Set the system hostname directly (hostnamectl requires systemd/D-Bus, unavailable at build time)
+echo "pepi" > /etc/hostname
