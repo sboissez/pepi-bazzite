@@ -18,6 +18,7 @@ dnf5 remove -y gnome-shell-extension-gsconnect
 dnf5 remove -y input-remapper
 dnf5 remove -y rom-properties
 dnf5 remove -y ptyxis
+dnf5 remove -y lutris
 
 # Remove other built-in GNOME Shell extensions we don't want.
 rm -rf /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com

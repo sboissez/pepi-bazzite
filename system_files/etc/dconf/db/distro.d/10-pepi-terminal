@@ -7,4 +7,4 @@ command='ghostty'
 name='Terminal'
 
 [org/gnome/shell]
-favorite-apps=['org.mozilla.firefox.desktop', 'steam.desktop', 'net.lutris.Lutris.desktop', 'io.github.kolunmi.Bazaar.desktop', 'io.github.ublue_os.yafti_gtk.desktop', 'com.mitchellh.ghostty.desktop', 'org.gnome.Nautilus.desktop']
+favorite-apps=['org.mozilla.firefox.desktop', 'steam.desktop', 'io.github.kolunmi.Bazaar.desktop', 'io.github.ublue_os.yafti_gtk.desktop', 'com.mitchellh.ghostty.desktop', 'org.gnome.Nautilus.desktop']
