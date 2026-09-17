@@ -1,0 +1,13 @@
+[Unit]
+Description=Apply Pepi GRUB defaults and Dracula theme
+After=local-fs.target
+ConditionPathExists=/boot/grub2/grub.cfg
+ConditionPathExists=/etc/default/grub
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/pepi-configure-grub
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

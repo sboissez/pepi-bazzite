@@ -40,6 +40,7 @@ rm -f /usr/share/fish/vendor_conf.d/bazzite-neofetch.fish
 
 # Install our custom Flatpaks (Discord, Zed, Transmission) on first boot.
 systemctl enable pepi-install.service
+systemctl enable pepi-configure-grub.service
 
 echo "pepi" > /etc/hostname
 

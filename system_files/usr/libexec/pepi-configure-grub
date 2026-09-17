@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -euo pipefail
+
+source /usr/libexec/bazzite-boot-remount
+
+theme_source="/usr/share/pepi-grub/dracula"
+theme_dir="/boot/grub2/themes/dracula"
+version_file="/usr/share/pepi-grub/version"
+state_file="/var/lib/pepi-grub/version"
+grub_config="/etc/grub2.cfg"
+
+if [[ -d /sys/firmware/efi ]]; then
+    grub_config="/etc/grub2-efi.cfg"
+fi
+
+if cmp -s "$version_file" "$state_file" && [[ -f "$theme_dir/theme.txt" ]]; then
+    exit 0
+fi
+
+trap remount_boot_ro EXIT
+remount_boot_rw
+
+install -d -m 0755 "$theme_dir"
+cp -a "$theme_source/." "$theme_dir/"
+restorecon -RF "$theme_dir" >/dev/null
+
+grub2-mkconfig -o "$grub_config"
+grub2-script-check /boot/grub2/grub.cfg
+grub2-editenv - unset menu_auto_hide
+
+install -D -m 0644 "$version_file" "$state_file"

@@ -1,0 +1,5 @@
+GRUB_TIMEOUT=10
+GRUB_TIMEOUT_STYLE=menu
+GRUB_GFXMODE=auto
+GRUB_THEME="/boot/grub2/themes/dracula/theme.txt"
+GRUB_TERMINAL_OUTPUT="gfxterm"
